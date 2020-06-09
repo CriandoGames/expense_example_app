@@ -1,4 +1,4 @@
-# expenseexampleapp
+# expense example app using GET
 
 A new Flutter application.
 
