@@ -12,7 +12,7 @@ class HomeController extends GetController {
   ];
 
   addTransaction(String title, double value) {
-    print("Adicionando");
+
     final newTransaction = Transaction(
       id: Random().nextDouble().toString(),
       title: title,
@@ -20,7 +20,7 @@ class HomeController extends GetController {
       date: DateTime.now(),
     );
     transaction.add(newTransaction);
-        print("Adicionado");
     this.update();
+    Get.close(0); // fecho meu modal em 0 segundos
   }
 }

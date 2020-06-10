@@ -14,11 +14,18 @@ class _TransactionFormState extends State<TransactionForm> {
   final TextEditingController _valueController = TextEditingController();
 
   _submitForm() {
-    print(" controlle" + _titleController.text);
-    final title = _titleController.text;
-    final value = double.parse(_valueController.text);
-    print(title + value.toString());
-    widget.onSubmit(title, value);
+
+      try{
+       final title = _titleController.text;
+       final value = double.parse(_valueController.text);
+
+      if(title.isNotEmpty || value>0)
+      widget.onSubmit(title, value);
+
+      }catch(e){
+        print(e);
+      }  
+    
   }
 
   @override
