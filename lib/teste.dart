@@ -1,7 +1,6 @@
 import 'package:expenseexampleapp/screen/Home/componets/Home_Controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'screen/Home/componets/TransactionFormWidgt.dart';
 import 'screen/Home/componets/TransactionListViewWidgt.dart';
 
 class TransactionUser extends StatelessWidget {
@@ -15,12 +14,6 @@ class TransactionUser extends StatelessWidget {
             return TransactionList(
               transactions: _.transaction,
             );
-          },
-        ),
-        GetBuilder<HomeController>(
-          init: HomeController(),
-          builder: (_) {
-            return TransactionForm(_.addTransaction);
           },
         ),
       ],

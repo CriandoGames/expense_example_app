@@ -9,13 +9,10 @@ class HomeController extends GetController {
     Transaction(id: "t1", title: "lala", value: 10.0, date: DateTime.now()),
     Transaction(id: "t2", title: "carlos", value: 9.99, date: DateTime.now()),
     Transaction(id: "t3", title: "carlos", value: 9.99, date: DateTime.now()),
-    Transaction(id: "t4", title: "carlos", value: 9.99, date: DateTime.now()),
-    Transaction(id: "t5", title: "carlos", value: 9.99, date: DateTime.now()),
-    Transaction(id: "t6", title: "carlos", value: 9.99, date: DateTime.now()),
-    Transaction(id: "t7", title: "carlos", value: 9.99, date: DateTime.now()),
   ];
 
   addTransaction(String title, double value) {
+    print("Adicionando");
     final newTransaction = Transaction(
       id: Random().nextDouble().toString(),
       title: title,
@@ -23,6 +20,7 @@ class HomeController extends GetController {
       date: DateTime.now(),
     );
     transaction.add(newTransaction);
+        print("Adicionado");
     this.update();
   }
 }
