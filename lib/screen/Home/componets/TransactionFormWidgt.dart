@@ -38,7 +38,6 @@ class _TransactionFormState extends State<TransactionForm> {
           children: <Widget>[
             TextField(
               controller: _titleController,
-              // onChanged: (value) => _titleController.text = value,
               decoration: InputDecoration(
                 labelText: "Título",
               ),
@@ -47,7 +46,6 @@ class _TransactionFormState extends State<TransactionForm> {
             TextField(
               keyboardType: TextInputType.numberWithOptions(decimal: true),
               controller: _valueController,
-              //onChanged: (value) => _valueController.text = value,
               decoration: InputDecoration(
                 labelText: "Valor",
               ),
