@@ -1,10 +1,7 @@
-import 'package:expenseexampleapp/componets/Home/TransactionFormView.dart';
-import 'package:expenseexampleapp/componets/Home/TransactionListView.dart';
 import 'package:expenseexampleapp/model/Transaction.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
-import '../teste.dart';
+import '../../teste.dart';
 
 class Home extends StatelessWidget {
   final List<Transaction> _transaction = [
@@ -19,16 +16,18 @@ class Home extends StatelessWidget {
         title: Text("Despensas Pessoais"),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Container(
-            width: double.infinity,
-            child: Card(
-              child: Text("Grafico"),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              child: Card(
+                child: Text("Grafico"),
+              ),
             ),
-          ),
-          TransactionUser(),
-        ],
+            TransactionUser(),
+          ],
+        ),
       ),
     );
   }

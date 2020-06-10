@@ -1,8 +1,13 @@
+import 'package:expenseexampleapp/model/Transaction.dart';
 import 'package:flutter/material.dart';
 
 class TransactionForm extends StatelessWidget {
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _valueController = TextEditingController();
+
+  final void Function(String, double) onSubmit;
+
+  TransactionForm(this.onSubmit);
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +38,10 @@ class TransactionForm extends StatelessWidget {
                   child: Text("Nova Trasação"),
                   textColor: Colors.purpleAccent,
                   onPressed: () {
-                    print("Value " + _valueController.text);
-                    print("Title " + _titleController.text);
+                    final title = _titleController.text;
+                    final value = double.parse(_valueController.text);
+                    print(title + value.toString());
+                    onSubmit(title, value);
                   },
                 ),
               ],
