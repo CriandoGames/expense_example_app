@@ -1,13 +1,12 @@
 import 'dart:math';
 import 'package:expenseexampleapp/domain/model/Transaction.dart';
-import 'package:expenseexampleapp/presentation/screen/Home/componets/TransactionFormWidgt.dart';
+import 'package:expenseexampleapp/presentation/screen/Home/components/TransactionFormWidgt.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  static HomeController get to => Get.find();
-
-  List<Transaction> transaction = [
+ 
+  RxList<Transaction> transaction = [
     Transaction(
         id: "t1",
         title: "lala",
@@ -28,7 +27,7 @@ class HomeController extends GetxController {
         title: "lala",
         value: 10.0,
         date: DateTime.now().subtract(Duration(days: 1))),
-  ];
+  ].obs;
 
   List<Transaction> get recentTransactions {
     return recentTransactions.where((element) {

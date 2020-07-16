@@ -1,4 +1,4 @@
-import 'package:expenseexampleapp/presentation/screen/Home/componets/Home_Controller.dart';
+import 'package:expenseexampleapp/presentation/screen/Home/components/Home_Controller.dart';
 import 'package:get/get.dart';
 
 class HomeControllerBindings extends Bindings {

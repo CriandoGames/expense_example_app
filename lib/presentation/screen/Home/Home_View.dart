@@ -1,8 +1,8 @@
-import 'package:expenseexampleapp/screen/Home/componets/Chart.dart';
-import 'package:expenseexampleapp/screen/Home/componets/TransactionListViewWidgt.dart';
+import 'package:expenseexampleapp/presentation/screen/Home/components/Chart.dart';
+import 'package:expenseexampleapp/presentation/screen/Home/components/TransactionListViewWidgt.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'componets/Home_Controller.dart';
+import 'components/Home_Controller.dart';
 
 class Home extends GetView<HomeController> {
   @override
@@ -21,9 +21,15 @@ class Home extends GetView<HomeController> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-                width: double.infinity, child: Chart(controller.transaction)),
-            TransactionList(transactions: controller.transaction),
+            Obx(() {
+              return Container(
+                  width: double.infinity,
+                  child: Chart(controller.transaction.value));
+            }),
+            Obx(() {
+              return TransactionList(
+                  transactions: controller.transaction.value);
+            }),
           ],
         ),
       ),
