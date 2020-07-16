@@ -1,4 +1,4 @@
-import 'package:expenseexampleapp/model/Transaction.dart';
+import 'package:expenseexampleapp/domain/model/Transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
